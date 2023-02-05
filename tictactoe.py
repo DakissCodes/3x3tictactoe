@@ -150,49 +150,83 @@ def display_board(board):
 
 
 def move_check(chosen_pos, board, sign):
-    # checks whether the chosen position
-    # is available by checking if they match
-    for i in range(len(board)):
-        if board[i] == str(chosen_pos):
-            board[i] = sign
-            return True
-
+    # chosen pos is index 1-81 (string)
+    # board is a list with element strings from 1-81
+    # sign is 'x' or 'o'
+    
+    # if board index of chosen pos is not in x or o 
+    # change element to sign
+    # else return false
+    if board[chosen_pos - 1] not in ['X','O']:
+        board[chosen_pos- 1] = sign
+        return True
     return False
 
+def match_clearer(position,board,sign,action):
+    # position is an index
+    
+    if action == 'move':
+        if position > 8:
+            board[position] = sign + ' '
+        else:
+            board[position] = sign
+    elif action == 'clear':
+        if position < 8:
+            board[]
+
+    # accepts a position
+    # if the position is > than 9 
+    # must put 'X '
+    # if the pos is < than 9 'X'
+    
 
 def winner_check(board, moves):
-    # checks if there is a winner
-    for num in range(0, 3):
-        # checks for horizontal combinations
-        if board[num] == board[num+1] == board[num+2]:
-            if board[num] == 'O':
-                return 1
-            else:
-                return 2
-        # checks for vertical combinations
-        if board[num] == board[num+3] == board[num+6]:
-            if board[num] == 'O':
-                return 1
-            else:
-                return 2
-    # diagonal combinations
-    if board[0] == board[4] == board[8]:
-        if board[0] == 'O':
-            return 1
-        else:
-            return 2
-    if board[2] == board[4] == board[6]:
-        if board[2] == 'O':
-            return 1
-        else:
-            return 2
-    # if moves reach 8 counts, it is a draw
-    if moves == 8:
-        return 3
+    # HORIZONTAL COMBINATIONS 
     
-    # if 4, continue the game
-    return 4
+    # loop through each row
+    for row in [1,10,19,28,37,46,55,64,71]:
+        # for each row, loop through each element
+        for i in range(row,row+7):
+            if board[i] == board[i+1] == board[i+2]:
+                board[i] = '--'
+                board[i] = '0'
+                print('MACTH!!!!')
+            
+    
+    
+    
+    
+    # # checks if there is a winner
+    # for num in range(0, 3):
+    #     # checks for horizontal combinations
+    #     if board[num] == board[num+1] == board[num+2]:
+    #         if board[num] == 'O':
+    #             return 1
+    #         else:
+    #             return 2
+    #     # checks for vertical combinations
+    #     if board[num] == board[num+3] == board[num+6]:
+    #         if board[num] == 'O':
+    #             return 1
+    #         else:
+    #             return 2
+    # # diagonal combinations
+    # if board[0] == board[4] == board[8]:
+    #     if board[0] == 'O':
+    #         return 1
+    #     else:
+    #         return 2
+    # if board[2] == board[4] == board[6]:
+    #     if board[2] == 'O':
+    #         return 1
+    #     else:
+    #         return 2
+    # # if moves reach 8 counts, it is a draw
+    # if moves == 8:
+    #     return 3
+    
+    # # if 4, continue the game
+    # return 4
 
 
-
-                                                                                                        
+display_board(board)
