@@ -1,22 +1,39 @@
 
-# TIC TAC TOE
-# Player is O, computer is X
+
+
+# 9 lists 
+#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 import random
 import time
 import os
+board = [str(pos)for pos in range(1,82)]
 
 
 def main():
 
-    game = True
+    game = False
 
     while game:
 
-        moves = 0
-        board = ['1', '2', '3', '4', 'X', '6', '7', '8', '9']
-        os.system('cls')
+        move = 0
+
+        board = [str(pos)for pos in range(1,82)]
         print('\nStarting game........')
 
         time.sleep(2)
@@ -81,19 +98,55 @@ def main():
 
 
 def display_board(board):
-    vert = "+-------+-------+-------+\n"
-    pillar = "|       |       |       |\n"
-    row_1 = "|   {}   |   {}   |   {}   |\n".format(
-        board[0], board[1], board[2])
-    row_2 = "|   {}   |   {}   |   {}   |\n".format(
-        board[3], board[4], board[5])
-    row_3 = "|   {}   |   {}   |   {}   |\n".format(
-        board[6], board[7], board[8])
-    # displays the board
-    print('\n'+ vert + pillar + row_1 + pillar
-          + vert + pillar + row_2 + pillar
-          + vert + pillar + row_3 + pillar
-          + vert)
+    # prints the 3x3 board
+    print("+--------+--------+--------++--------+--------+--------++--------+--------+--------+")
+    print("|        |        |        ||        |        |        ||        |        |        |")
+    print("|   {}    |   {}    |   {}    ||   {}    |   {}    |   {}    ||   {}    |   {}    |   {}    |".format(board[0],board[1],board[2],board[3],board[4],
+                                                                                                            board[5],board[6],board[7],board[8]))
+    print("|        |        |        ||        |        |        ||        |        |        |")
+    print("+--------+--------+--------++--------+--------+--------++--------+--------+--------+")
+    print("|        |        |        ||        |        |        ||        |        |        |")
+    print("|   {}   |   {}   |   {}   ||   {}   |   {}   |   {}   ||   {}   |   {}   |   {}   |".format(board[9],board[10],board[11],board[12],board[13],
+                                                                                                            board[14],board[15],board[16],board[17]))
+    print("|        |        |        ||        |        |        ||        |        |        |")
+    print("+--------+--------+--------++--------+--------+--------++--------+--------+--------+")
+    print("|        |        |        ||        |        |        ||        |        |        |")
+    print("|   {}   |   {}   |   {}   ||   {}   |   {}   |   {}   ||   {}   |   {}   |   {}   |".format(board[18],board[19],board[20],board[21],board[22],
+                                                                                                            board[23],board[24],board[25],board[26]))
+    print("|        |        |        ||        |        |        ||        |        |        |")
+    print("+--------+--------+--------++--------+--------+--------++--------+--------+--------+")
+    print("|        |        |        ||        |        |        ||        |        |        |")
+    print("|   {}   |   {}   |   {}   ||   {}   |   {}   |   {}   ||   {}   |   {}   |   {}   |".format(board[27],board[28],board[29],board[30],board[31],
+                                                                                                            board[32],board[33],board[34],board[35]))
+    print("|        |        |        ||        |        |        ||        |        |        |")
+    print("+--------+--------+--------++--------+--------+--------++--------+--------+--------+")
+    print("|        |        |        ||        |        |        ||        |        |        |")
+    print("|   {}   |   {}   |   {}   ||   {}   |   {}   |   {}   ||   {}   |   {}   |   {}   |".format(board[36],board[37],board[38],board[39],board[40],
+                                                                                                            board[41],board[42],board[43],board[44]))
+    print("|        |        |        ||        |        |        ||        |        |        |")
+    print("+--------+--------+--------++--------+--------+--------++--------+--------+--------+")
+    print("|        |        |        ||        |        |        ||        |        |        |")
+    print("|   {}   |   {}   |   {}   ||   {}   |   {}   |   {}   ||   {}   |   {}   |   {}   |".format(board[45],board[46],board[47],board[48],board[49],
+                                                                                                            board[50],board[51],board[52],board[53]))
+    print("|        |        |        ||        |        |        ||        |        |        |")
+    print("+--------+--------+--------++--------+--------+--------++--------+--------+--------+")
+    print("|        |        |        ||        |        |        ||        |        |        |")
+    print("|   {}   |   {}   |   {}   ||   {}   |   {}   |   {}   ||   {}   |   {}   |   {}   |".format(board[54],board[55],board[56],board[57],board[58],
+                                                                                                            board[59],board[60],board[61],board[62]))
+    print("|        |        |        ||        |        |        ||        |        |        |")
+    print("+--------+--------+--------++--------+--------+--------++--------+--------+--------+")
+    print("|        |        |        ||        |        |        ||        |        |        |")
+    print("|   {}   |   {}   |   {}   ||   {}   |   {}   |   {}   ||   {}   |   {}   |   {}   |".format(board[63],board[64],board[65],board[66],board[67],
+                                                                                                            board[68],board[69],board[70],board[71]))
+    print("|        |        |        ||        |        |        ||        |        |        |")
+    print("+--------+--------+--------++--------+--------+--------++--------+--------+--------+")
+    print("|        |        |        ||        |        |        ||        |        |        |")
+    print("|   {}   |   {}   |   {}   ||   {}   |   {}   |   {}   ||   {}   |   {}   |   {}   |".format(board[72],board[73],board[74],board[75],board[76],
+                                                                                                            board[77],board[78],board[79],board[80]))
+    print("|        |        |        ||        |        |        ||        |        |        |")
+    print("+--------+--------+--------++--------+--------+--------++--------+--------+--------+")
+
+
 
 
 def move_check(chosen_pos, board, sign):
@@ -142,11 +195,4 @@ def winner_check(board, moves):
 
 
 
-if __name__ == "__main__":
-    main()
-    
-
-
-
-
-
+                                                                                                        
